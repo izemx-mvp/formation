@@ -1142,8 +1142,8 @@ function LandingPage() {
         <Program />
         <Coaching />
         <Trainer />
-        <FAQ />
         <Inscription />
+        <FAQ />
       </main>
       <Footer />
       <FloatingWhatsApp />
