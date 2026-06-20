@@ -111,17 +111,17 @@ function Hero() {
             Places limitées à 20 participants par groupe
           </div>
           <h1 className="mt-6 text-4xl font-bold leading-[1.1] text-white sm:text-5xl lg:text-6xl">
-            Prenez une longueur d'avance grâce à{" "}
-            <span className="text-gradient">l'intelligence artificielle</span>
+            Transformez votre entreprise avec{" "}
+            <span className="text-gradient">l'intelligence artificielle</span>.
           </h1>
           <p className="mt-6 text-lg text-muted-foreground">
-            Apprenez à automatiser votre activité, créer vos premiers agents IA et construire
-            une stratégie adaptée à votre entreprise en seulement 3 semaines.
+            En seulement 3 semaines, apprenez à automatiser vos processus, créer vos premiers
+            agents IA et construire une feuille de route adaptée à votre activité.
           </p>
           <p className="mt-4 text-sm text-muted-foreground/80">
-            Une formation immersive conçue spécialement pour les entrepreneurs et les
-            entreprises qui souhaitent gagner du temps, automatiser leurs opérations et
-            accélérer leur croissance grâce à l'IA.
+            Une formation immersive conçue pour les entrepreneurs, dirigeants et entreprises
+            qui souhaitent gagner du temps, automatiser leurs opérations et accélérer leur
+            croissance grâce à l'intelligence artificielle.
           </p>
 
           <ul className="mt-8 space-y-3">
@@ -364,10 +364,12 @@ function ForWhom() {
   const items = [
     { icon: Briefcase, text: "Vous dirigez une entreprise" },
     { icon: Clock, text: "Vous perdez du temps sur des tâches répétitives" },
-    { icon: Brain, text: "Vous utilisez déjà ChatGPT mais voulez aller plus loin" },
+    { icon: Brain, text: "Vous utilisez déjà ChatGPT mais souhaitez aller plus loin" },
     { icon: Workflow, text: "Vous souhaitez automatiser votre activité" },
     { icon: Bot, text: "Vous souhaitez créer des agents IA" },
     { icon: Rocket, text: "Vous souhaitez lancer un projet basé sur l'IA" },
+    { icon: Users, text: "Vous souhaitez améliorer la productivité de vos équipes" },
+    { icon: Zap, text: "Vous cherchez à réduire les tâches administratives chronophages" },
     { icon: Target, text: "Vous voulez prendre une longueur d'avance sur votre marché" },
   ];
   return (
@@ -618,6 +620,7 @@ function Coaching() {
     "Validation du projet",
     "Recommandations personnalisées",
     "Questions / réponses",
+    "Définition d'une feuille de route personnalisée",
   ];
   return (
     <section className="py-24">
@@ -652,60 +655,130 @@ function Coaching() {
 }
 
 function Trainer() {
+  const stats = [
+    { v: "100+", l: "collaborateurs" },
+    { v: "3", l: "bureaux : Paris · Casablanca · Dubaï" },
+    { v: "ESN", l: "spécialisée IA & automatisation" },
+    { v: "IAvia", l: "1ʳᵉ plateforme marocaine d'agents IA" },
+  ];
   return (
     <section id="formateur" className="py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <div className="grid items-center gap-12 lg:grid-cols-2">
-          <div className="relative mx-auto aspect-[4/5] w-full max-w-md">
-            <div className="absolute inset-0 rounded-3xl bg-gradient-izemx opacity-40 blur-2xl" />
-            <div className="relative h-full w-full overflow-hidden rounded-3xl glass-strong">
-              <div className="absolute inset-0 grid place-items-center bg-gradient-izemx/20">
-                <div className="text-center">
-                  <div className="mx-auto grid h-40 w-40 place-items-center rounded-full bg-white/10 text-7xl backdrop-blur">
-                    👤
-                  </div>
-                  <div className="mt-4 font-display text-2xl font-bold text-white">
-                    Mohsine Bahhou
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    Fondateur IZEMX & IAvia
+        <div className="grid gap-12 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
+          {/* Left: photo + stats */}
+          <div className="space-y-6">
+            <div className="relative mx-auto aspect-[4/5] w-full max-w-sm">
+              <div className="absolute inset-0 rounded-3xl bg-gradient-izemx opacity-40 blur-2xl" />
+              <div className="relative h-full w-full overflow-hidden rounded-3xl glass-strong">
+                <div className="absolute inset-0 grid place-items-center bg-gradient-izemx/20">
+                  <div className="text-center">
+                    <div className="mx-auto grid h-40 w-40 place-items-center rounded-full bg-white/10 text-7xl backdrop-blur">
+                      👤
+                    </div>
+                    <div className="mt-4 font-display text-2xl font-bold text-white">
+                      Mohsine Bahhou
+                    </div>
+                    <div className="text-sm text-muted-foreground">
+                      Président Directeur Général d'IZEMX
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div>
-            <div className="text-xs font-semibold uppercase tracking-widest text-primary">
-              Le formateur
-            </div>
-            <h2 className="mt-3 text-3xl font-bold text-white sm:text-4xl">
-              Un expert reconnu de la <span className="text-gradient">transformation IA</span>
-            </h2>
-            <div className="mt-6 space-y-4 text-muted-foreground">
-              <p>
-                Mohsine Bahhou est le fondateur d'IZEMX et d'IAvia. Il accompagne les
-                entreprises dans leur transformation digitale et l'intégration de
-                l'intelligence artificielle.
-              </p>
-              <p>
-                À travers IZEMX, société spécialisée dans le développement de solutions
-                digitales sur mesure, il pilote des projets innovants en développement web,
-                mobile, automatisation et agents IA.
-              </p>
-              <p>
-                IZEMX est présente à <span className="text-white">Paris</span>,{" "}
-                <span className="text-white">Casablanca</span> et{" "}
-                <span className="text-white">Dubaï</span> et compte plus de{" "}
-                <span className="text-white">100 collaborateurs</span>.
-              </p>
-              <p>Ses travaux ont été relayés par plusieurs médias reconnus.</p>
-            </div>
-            <div className="mt-6 flex flex-wrap gap-3 text-xs text-muted-foreground">
-              {["Forbes", "BFM Business", "Le Figaro"].map((m) => (
-                <span key={m} className="glass rounded-full px-3 py-1">
-                  {m}
-                </span>
+
+            <div className="grid grid-cols-2 gap-3">
+              {stats.map((s) => (
+                <div key={s.l} className="glass rounded-xl p-4 text-center">
+                  <div className="text-gradient font-display text-2xl font-bold">{s.v}</div>
+                  <div className="mt-1 text-[11px] leading-tight text-muted-foreground">
+                    {s.l}
+                  </div>
+                </div>
               ))}
+            </div>
+
+            <div>
+              <div className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+                Médias
+              </div>
+              <div className="mt-3 flex flex-wrap gap-2 text-xs text-muted-foreground">
+                {["Forbes", "BFM Business", "Le Figaro"].map((m) => (
+                  <span key={m} className="glass rounded-full px-3 py-1">
+                    {m}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Right: content */}
+          <div>
+            <div className="inline-flex items-center gap-2 rounded-full bg-primary/15 px-4 py-1.5 text-xs font-semibold text-primary">
+              <Award className="h-3.5 w-3.5" /> Président Directeur Général d'IZEMX
+            </div>
+            <h2 className="mt-4 text-3xl font-bold text-white sm:text-4xl">
+              Un expert reconnu de la{" "}
+              <span className="text-gradient">
+                transformation digitale et de l'intelligence artificielle
+              </span>
+              .
+            </h2>
+            <p className="mt-5 text-muted-foreground">
+              Mohsine Bahhou accompagne les entreprises dans leur transformation digitale,
+              l'automatisation de leurs processus et l'intégration de l'intelligence
+              artificielle.
+            </p>
+
+            <div className="mt-6 glass rounded-2xl p-6">
+              <div className="text-sm font-semibold text-white">À propos d'IZEMX</div>
+              <div className="mt-3 space-y-3 text-sm text-muted-foreground">
+                <p>
+                  IZEMX est une ESN spécialisée dans le développement de solutions digitales
+                  sur mesure, couvrant aussi bien le développement web et mobile que
+                  l'intégration de technologies avancées telles que l'intelligence
+                  artificielle et les architectures décentralisées.
+                </p>
+                <p>
+                  Présente aujourd'hui à{" "}
+                  <span className="text-white">Paris, Casablanca et Dubaï</span>, IZEMX
+                  s'appuie sur une équipe de plus de{" "}
+                  <span className="text-white">100 collaborateurs</span> aux expertises
+                  complémentaires, mobilisés pour concevoir, développer et déployer des
+                  solutions innovantes adaptées aux enjeux métiers de ses clients.
+                </p>
+                <p>
+                  Nous accompagnons nos clients dans une grande variété de secteurs, depuis
+                  la phase de conception jusqu'à la mise en production, dans une logique
+                  d'accompagnement global et durable.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-4 glass-strong rounded-2xl p-6 ring-1 ring-primary/30">
+              <div className="text-sm font-semibold text-white">
+                Fondateur d'IAvia
+              </div>
+              <div className="mt-3 space-y-3 text-sm text-muted-foreground">
+                <p>
+                  Mohsine Bahhou est également le fondateur d'
+                  <span className="text-white">IAvia</span>, la première plateforme marocaine
+                  dédiée aux agents IA.
+                </p>
+                <p>
+                  IAvia aide les entreprises à intégrer facilement des agents intelligents
+                  afin d'automatiser leurs processus, améliorer leur productivité et
+                  accélérer leur transformation digitale.
+                </p>
+              </div>
+              <a
+                href="https://iavia.ai"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-flex items-center gap-2 rounded-full bg-gradient-izemx px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-primary/30 transition-transform hover:scale-105"
+              >
+                Découvrir IAvia
+                <ArrowRight className="h-4 w-4" />
+              </a>
             </div>
           </div>
         </div>
@@ -716,27 +789,33 @@ function Trainer() {
 
 function FAQ() {
   const items = [
-    { q: "Faut-il savoir coder ?", a: "Non." },
-    { q: "Cette formation est-elle adaptée aux débutants ?", a: "Oui." },
+    {
+      q: "Faut-il savoir coder ?",
+      a: "Non. Cette formation est accessible aux profils non techniques. Les outils présentés ont été sélectionnés pour leur simplicité d'utilisation et leur efficacité. L'objectif est de vous permettre de déployer rapidement des solutions concrètes, même sans compétences en développement.",
+    },
+    {
+      q: "Cette formation est-elle adaptée aux débutants ?",
+      a: "Oui. La formation a été conçue pour accompagner les participants, quel que soit leur niveau de départ. Nous avançons progressivement, avec des démonstrations, des ateliers pratiques et un accompagnement personnalisé.",
+    },
     {
       q: "Puis-je venir avec mon propre projet ?",
-      a: "Oui, c'est même recommandé.",
+      a: "Oui, c'est même fortement recommandé. Tout au long de la formation, vous appliquerez les concepts abordés à votre propre activité afin de repartir avec des résultats concrets.",
     },
     {
       q: "Les sessions sont-elles enregistrées ?",
-      a: "Oui, un replay est mis à disposition des participants pendant 30 jours.",
+      a: "Oui. Le replay de chaque session sera mis à votre disposition après chaque atelier.",
     },
     {
       q: "Quels outils seront utilisés ?",
-      a: "ChatGPT, Claude, n8n, Make et plusieurs plateformes d'agents IA.",
+      a: "Nous utiliserons notamment ChatGPT, Claude, n8n et Lovable. Cette sélection pourra évoluer en fonction des besoins des participants.",
     },
     {
       q: "Comment se déroule le coaching individuel ?",
-      a: "Une visio d'une heure planifiée à votre convenance après la dernière session.",
+      a: "Chaque participant bénéficie d'une session individuelle d'une heure afin d'analyser son activité, valider son projet et construire sa feuille de route IA.",
     },
     {
-      q: "Quels sont les moyens de paiement ?",
-      a: "Carte bancaire et virement bancaire.",
+      q: "Quels sont les moyens de paiement acceptés ?",
+      a: "Le règlement peut être effectué par carte bancaire ou par virement bancaire.",
     },
   ];
   const [open, setOpen] = useState<number | null>(0);
@@ -773,6 +852,8 @@ function FAQ() {
 
 function Inscription() {
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [form, setForm] = useState({
     prenom: "",
     nom: "",
@@ -788,18 +869,52 @@ function Inscription() {
     setForm((f) => ({ ...f, [k]: v }));
   }
 
-  function handleSubmit(e: FormEvent) {
+  async function handleSubmit(e: FormEvent) {
     e.preventDefault();
-    if (!form.rgpd) return;
-    const msg = `Bonjour,%0A%0AJe souhaite m'inscrire à la formation IA IZEMX.%0A%0APrénom : ${form.prenom}%0ANom : ${form.nom}%0AEntreprise : ${form.entreprise}%0AFonction : ${form.fonction}%0AEmail : ${form.email}%0ATéléphone : ${form.telephone}%0ASession : ${form.session}%0A%0AMerci de me recontacter afin de finaliser mon inscription.`;
-    const subject = encodeURIComponent("Nouvelle inscription — Formation IA IZEMX");
-    const body = decodeURIComponent(msg);
-    window.open(
-      `mailto:formation@izemx.com?subject=${subject}&body=${encodeURIComponent(body)}`,
-      "_blank",
-    );
-    window.open(`https://wa.me/212661403350?text=${msg}`, "_blank");
-    setSubmitted(true);
+    if (!form.rgpd || sending) return;
+    setSending(true);
+    setError(null);
+    try {
+      const res = await fetch("/api/public/inscription", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          prenom: form.prenom,
+          nom: form.nom,
+          entreprise: form.entreprise,
+          fonction: form.fonction,
+          email: form.email,
+          telephone: form.telephone,
+          session: form.session,
+        }),
+      });
+      if (!res.ok) throw new Error("send-failed");
+
+      const lines = [
+        "Bonjour,",
+        "",
+        "Je souhaite m'inscrire à la formation IA IZEMX.",
+        "",
+        `Prénom : ${form.prenom}`,
+        `Nom : ${form.nom}`,
+        `Entreprise : ${form.entreprise}`,
+        `Fonction : ${form.fonction}`,
+        `Email : ${form.email}`,
+        `Téléphone : ${form.telephone}`,
+        `Session : ${form.session}`,
+        "",
+        "Merci de me recontacter afin de finaliser mon inscription.",
+      ];
+      const waUrl = `https://wa.me/212661403350?text=${encodeURIComponent(lines.join("\n"))}`;
+      window.open(waUrl, "_blank", "noopener,noreferrer");
+      setSubmitted(true);
+    } catch {
+      setError(
+        "Une erreur est survenue lors de l'envoi. Veuillez réessayer ou nous contacter directement.",
+      );
+    } finally {
+      setSending(false);
+    }
   }
 
   if (submitted) {
@@ -902,12 +1017,19 @@ function Inscription() {
               J'accepte d'être recontacté dans le cadre de ma demande d'inscription.
             </label>
 
+            {error && (
+              <div className="sm:col-span-2 rounded-xl bg-destructive/15 px-4 py-3 text-center text-sm text-destructive">
+                {error}
+              </div>
+            )}
+
             <button
               type="submit"
-              className="sm:col-span-2 inline-flex items-center justify-center gap-2 rounded-full bg-gradient-izemx px-6 py-4 font-semibold text-white shadow-lg shadow-primary/40 transition-transform hover:scale-[1.02]"
+              disabled={sending}
+              className="sm:col-span-2 inline-flex items-center justify-center gap-2 rounded-full bg-gradient-izemx px-6 py-4 font-semibold text-white shadow-lg shadow-primary/40 transition-transform hover:scale-[1.02] disabled:opacity-60 disabled:hover:scale-100"
             >
-              Réserver ma place
-              <ArrowRight className="h-4 w-4" />
+              {sending ? "Envoi en cours…" : "Réserver ma place"}
+              {!sending && <ArrowRight className="h-4 w-4" />}
             </button>
 
             <p className="sm:col-span-2 text-center text-xs text-muted-foreground">
@@ -980,6 +1102,29 @@ function Footer() {
   );
 }
 
+function FloatingWhatsApp() {
+  return (
+    <a
+      href="https://wa.me/212661403350"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Contacter notre équipe sur WhatsApp"
+      className="group fixed bottom-5 right-5 z-50 flex items-center gap-3"
+    >
+      <span className="pointer-events-none hidden max-w-[220px] rounded-full glass-strong px-4 py-2 text-xs font-medium text-white opacity-0 shadow-lg transition-opacity duration-200 group-hover:opacity-100 sm:block">
+        Besoin d'informations ? Échangez avec notre équipe.
+      </span>
+      <span
+        className="grid h-14 w-14 place-items-center rounded-full bg-gradient-izemx text-white shadow-lg shadow-primary/40 ring-1 ring-white/20 transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(0,163,224,0.7)]"
+      >
+        <svg viewBox="0 0 32 32" className="h-7 w-7 fill-white" aria-hidden="true">
+          <path d="M19.11 17.21c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.47-2.4-1.49-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01a1.1 1.1 0 0 0-.8.37c-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.21 5.1 4.5.71.31 1.27.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35Zm-5.41 7.4h-.01a10.5 10.5 0 0 1-5.36-1.47l-.39-.23-3.98 1.04 1.07-3.87-.25-.4a10.46 10.46 0 0 1-1.61-5.61c0-5.79 4.71-10.5 10.51-10.5 2.8 0 5.44 1.1 7.42 3.08a10.43 10.43 0 0 1 3.08 7.43c0 5.79-4.71 10.5-10.5 10.5Zm8.94-19.43A12.43 12.43 0 0 0 13.7 1.5C6.83 1.5 1.23 7.1 1.23 13.97c0 2.2.57 4.34 1.66 6.23L1.13 26.5l6.44-1.69a12.42 12.42 0 0 0 5.94 1.51h.01c6.87 0 12.47-5.6 12.47-12.47 0-3.33-1.3-6.47-3.66-8.83Z" />
+        </svg>
+      </span>
+    </a>
+  );
+}
+
 function LandingPage() {
   return (
     <div className="min-h-screen overflow-x-hidden">
@@ -996,6 +1141,7 @@ function LandingPage() {
         <Inscription />
       </main>
       <Footer />
+      <FloatingWhatsApp />
     </div>
   );
 }
