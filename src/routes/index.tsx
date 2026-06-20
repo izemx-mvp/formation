@@ -1102,6 +1102,29 @@ function Footer() {
   );
 }
 
+function FloatingWhatsApp() {
+  return (
+    <a
+      href="https://wa.me/212661403350"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Contacter notre équipe sur WhatsApp"
+      className="group fixed bottom-5 right-5 z-50 flex items-center gap-3"
+    >
+      <span className="pointer-events-none hidden max-w-[220px] rounded-full glass-strong px-4 py-2 text-xs font-medium text-white opacity-0 shadow-lg transition-opacity duration-200 group-hover:opacity-100 sm:block">
+        Besoin d'informations ? Échangez avec notre équipe.
+      </span>
+      <span
+        className="grid h-14 w-14 place-items-center rounded-full bg-gradient-izemx text-white shadow-lg shadow-primary/40 ring-1 ring-white/20 transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(0,163,224,0.7)]"
+      >
+        <svg viewBox="0 0 32 32" className="h-7 w-7 fill-white" aria-hidden="true">
+          <path d="M19.11 17.21c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.47-2.4-1.49-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01a1.1 1.1 0 0 0-.8.37c-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.21 5.1 4.5.71.31 1.27.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35Zm-5.41 7.4h-.01a10.5 10.5 0 0 1-5.36-1.47l-.39-.23-3.98 1.04 1.07-3.87-.25-.4a10.46 10.46 0 0 1-1.61-5.61c0-5.79 4.71-10.5 10.51-10.5 2.8 0 5.44 1.1 7.42 3.08a10.43 10.43 0 0 1 3.08 7.43c0 5.79-4.71 10.5-10.5 10.5Zm8.94-19.43A12.43 12.43 0 0 0 13.7 1.5C6.83 1.5 1.23 7.1 1.23 13.97c0 2.2.57 4.34 1.66 6.23L1.13 26.5l6.44-1.69a12.42 12.42 0 0 0 5.94 1.51h.01c6.87 0 12.47-5.6 12.47-12.47 0-3.33-1.3-6.47-3.66-8.83Z" />
+        </svg>
+      </span>
+    </a>
+  );
+}
+
 function LandingPage() {
   return (
     <div className="min-h-screen overflow-x-hidden">
@@ -1118,6 +1141,7 @@ function LandingPage() {
         <Inscription />
       </main>
       <Footer />
+      <FloatingWhatsApp />
     </div>
   );
 }
