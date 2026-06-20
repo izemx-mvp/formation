@@ -93,6 +93,7 @@ function Hero() {
     "Travail sur votre propre activité",
     "Ateliers pratiques et quiz interactifs",
     "Sessions limitées à 20 participants",
+    "Attestation de formation délivrée par IZEMX",
   ];
   const orbitRing1 = [
     "https://izemx.com/wp-content/uploads/2026/01/Ziri-Community-management.png",
@@ -157,8 +158,8 @@ function Hero() {
               <div>Samedi 25 juillet</div>
             </div>
             <div className="mt-3 flex flex-wrap gap-4 text-xs text-muted-foreground">
-              <span>🕘 Matin : 9h00 – 12h00</span>
-              <span>🕝 Après-midi : 14h30 – 17h30</span>
+              <span>🕘 Groupe matin : 10h00 – 13h00</span>
+              <span>🕝 Groupe après-midi : 14h30 – 17h30</span>
             </div>
             <div className="mt-4 inline-flex items-center gap-2 rounded-full glass border border-primary/40 px-4 py-2 text-sm font-semibold text-white shadow-[0_0_24px_rgba(0,163,224,0.25)]">
               <span className="text-primary">Tarif :</span>
@@ -166,17 +167,17 @@ function Hero() {
             </div>
           </div>
 
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="hero-actions mt-8 flex flex-col gap-3.5 sm:flex-row sm:flex-wrap">
             <a
               href="#inscription"
-              className="group inline-flex items-center gap-2 rounded-full bg-gradient-izemx px-6 py-3 font-semibold text-white shadow-lg shadow-primary/40 transition-transform hover:scale-105"
+              className="group inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-gradient-izemx px-6 py-3 font-semibold text-white shadow-lg shadow-primary/40 transition-transform hover:scale-105"
             >
               Réserver ma place
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </a>
             <a
               href="#programme"
-              className="inline-flex items-center gap-2 rounded-full glass px-6 py-3 font-semibold text-white transition-colors hover:bg-white/10"
+              className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full glass px-6 py-3 font-semibold text-white transition-colors hover:bg-white/10"
             >
               Découvrir le programme
             </a>
@@ -844,7 +845,7 @@ function Inscription() {
     fonction: "",
     email: "",
     telephone: "",
-    session: "Groupe matin (9h00 – 12h00)",
+    session: "Groupe matin (10h00 – 13h00)",
     rgpd: false,
   });
 
@@ -927,12 +928,17 @@ function Inscription() {
         <div className="glass-strong rounded-3xl p-8 sm:p-12 glow-blue">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-white sm:text-4xl">
-              Réservez votre place pour la{" "}
-              <span className="text-gradient">session de juillet</span>
+              Réservez votre place — {" "}
+              <span className="text-gradient">Session juillet</span>
             </h2>
-            <p className="mt-3 text-muted-foreground">
-              Les places sont limitées à 20 participants par groupe.
-            </p>
+            <div className="mt-5 inline-flex items-center gap-2 rounded-full glass-strong border border-primary/40 px-5 py-2 text-sm font-semibold text-primary shadow-[0_0_24px_rgba(0,163,224,0.35)]">
+              <Sparkles className="h-4 w-4" />
+              <span style={{ color: "#00A3E0" }}>Places limitées à 20 participants par groupe.</span>
+            </div>
+            <div className="mt-4 inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs text-foreground/80 ml-2">
+              <Award className="h-3.5 w-3.5 text-primary" />
+              Attestation de formation délivrée par IZEMX
+            </div>
           </div>
 
           <form onSubmit={handleSubmit} className="mt-10 grid gap-4 sm:grid-cols-2">
@@ -985,7 +991,7 @@ function Inscription() {
               value={form.session}
               onChange={(e) => update("session", e.target.value)}
             >
-              <option>Groupe matin (9h00 – 12h00)</option>
+              <option>Groupe matin (10h00 – 13h00)</option>
               <option>Groupe après-midi (14h30 – 17h30)</option>
             </select>
 
@@ -1136,8 +1142,8 @@ function LandingPage() {
         <Program />
         <Coaching />
         <Trainer />
-        <FAQ />
         <Inscription />
+        <FAQ />
       </main>
       <Footer />
       <FloatingWhatsApp />
