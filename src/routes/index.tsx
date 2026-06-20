@@ -1055,14 +1055,16 @@ function Footer() {
         <h2 className="mb-12 text-center text-2xl font-semibold text-white">Contact</h2>
         <div className="grid gap-10 md:grid-cols-4">
           <div>
-            <img src={LOGO} alt="IZEMX" className="h-10 w-auto" />
+            <a href="https://izemx.com/" className="inline-block transition-opacity hover:opacity-80">
+              <img src={LOGO} alt="IZEMX" className="h-10 w-auto" />
+            </a>
             <p className="mt-5 text-lg font-semibold text-white">Make Your Future Roar</p>
             <div className="mt-5 flex items-center gap-4 text-muted-foreground">
-              <a href="#" aria-label="Facebook" className="hover:text-primary"><Facebook className="h-5 w-5" /></a>
-              <a href="#" aria-label="X" className="hover:text-primary"><X className="h-5 w-5" /></a>
-              <a href="#" aria-label="Instagram" className="hover:text-primary"><Instagram className="h-5 w-5" /></a>
-              <a href="#" aria-label="LinkedIn" className="hover:text-primary"><Linkedin className="h-5 w-5" /></a>
-              <a href="#" aria-label="YouTube" className="hover:text-primary"><Youtube className="h-5 w-5" /></a>
+              <a href="https://www.facebook.com/Izemxofficial/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-primary"><Facebook className="h-5 w-5" /></a>
+              <a href="https://x.com/izemx_agency" target="_blank" rel="noopener noreferrer" aria-label="X" className="hover:text-primary"><X className="h-5 w-5" /></a>
+              <a href="https://www.instagram.com/izemx_official/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-primary"><Instagram className="h-5 w-5" /></a>
+              <a href="https://www.linkedin.com/company/izemx/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-primary"><Linkedin className="h-5 w-5" /></a>
+              <a href="https://www.youtube.com/@Izemxagency" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="hover:text-primary"><Youtube className="h-5 w-5" /></a>
             </div>
             <div className="mt-4 flex items-center gap-2 text-sm">
               <button aria-label="Français" className="text-base">🇫🇷</button>
