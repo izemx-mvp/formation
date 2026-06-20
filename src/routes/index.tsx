@@ -620,6 +620,7 @@ function Coaching() {
     "Validation du projet",
     "Recommandations personnalisées",
     "Questions / réponses",
+    "Définition d'une feuille de route personnalisée",
   ];
   return (
     <section className="py-24">
