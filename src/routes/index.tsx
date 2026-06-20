@@ -27,7 +27,7 @@ export const Route = createFileRoute("/")({
   component: LandingPage,
   head: () => ({
     meta: [
-      { title: "Formation IA IZEMX — Prenez une longueur d'avance grâce à l'IA" },
+      { title: "Formation IA IZEMX — Transformez votre entreprise avec l'IA" },
       {
         name: "description",
         content:
