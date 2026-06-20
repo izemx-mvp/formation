@@ -21,6 +21,11 @@ import {
   MessageCircle,
   ChevronDown,
   ArrowRight,
+  MapPin,
+  Facebook,
+  Instagram,
+  Linkedin,
+  Youtube,
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
