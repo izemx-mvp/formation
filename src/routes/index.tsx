@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState, type FormEvent } from "react";
+import { useState, useEffect, useRef, type FormEvent } from "react";
 import {
   Sparkles,
   Bot,
