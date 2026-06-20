@@ -111,17 +111,17 @@ function Hero() {
             Places limitées à 20 participants par groupe
           </div>
           <h1 className="mt-6 text-4xl font-bold leading-[1.1] text-white sm:text-5xl lg:text-6xl">
-            Prenez une longueur d'avance grâce à{" "}
-            <span className="text-gradient">l'intelligence artificielle</span>
+            Transformez votre entreprise avec{" "}
+            <span className="text-gradient">l'intelligence artificielle</span>.
           </h1>
           <p className="mt-6 text-lg text-muted-foreground">
-            Apprenez à automatiser votre activité, créer vos premiers agents IA et construire
-            une stratégie adaptée à votre entreprise en seulement 3 semaines.
+            En seulement 3 semaines, apprenez à automatiser vos processus, créer vos premiers
+            agents IA et construire une feuille de route adaptée à votre activité.
           </p>
           <p className="mt-4 text-sm text-muted-foreground/80">
-            Une formation immersive conçue spécialement pour les entrepreneurs et les
-            entreprises qui souhaitent gagner du temps, automatiser leurs opérations et
-            accélérer leur croissance grâce à l'IA.
+            Une formation immersive conçue pour les entrepreneurs, dirigeants et entreprises
+            qui souhaitent gagner du temps, automatiser leurs opérations et accélérer leur
+            croissance grâce à l'intelligence artificielle.
           </p>
 
           <ul className="mt-8 space-y-3">
