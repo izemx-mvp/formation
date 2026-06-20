@@ -89,12 +89,19 @@ function Hero() {
     "Ateliers pratiques et quiz interactifs",
     "Sessions limitées à 20 participants",
   ];
-  const floats = [
-    { label: "Agents IA", icon: Bot, pos: "top-4 -left-4 sm:-left-10" },
-    { label: "Automatisation", icon: Workflow, pos: "top-1/3 -right-4 sm:-right-10" },
-    { label: "Productivité", icon: Zap, pos: "bottom-24 -left-6 sm:-left-12" },
-    { label: "ROI", icon: TrendingUp, pos: "bottom-8 right-6" },
-    { label: "Gain de temps", icon: Clock, pos: "top-10 right-8" },
+  const orbitRing1 = [
+    "https://izemx.com/wp-content/uploads/2026/01/Ziri-Community-management.png",
+    "https://izemx.com/wp-content/uploads/2026/01/Ider-SEO.png",
+  ];
+  const orbitRing2 = [
+    "https://izemx.com/wp-content/uploads/2026/01/Aylan-Prospection-et-vente.png",
+    "https://izemx.com/wp-content/uploads/2026/01/Ayal-Service-client.png",
+    "https://izemx.com/wp-content/uploads/2026/01/Aren-Assistante-generale.png",
+  ];
+  const orbitRing3 = [
+    "https://izemx.com/wp-content/uploads/2026/01/Aqal-assistante-judiciaire.png",
+    "https://izemx.com/wp-content/uploads/2026/01/Anir-analyse-des-documents.png",
+    "https://izemx.com/wp-content/uploads/2026/01/Ania-RH.png",
   ];
 
   return (
