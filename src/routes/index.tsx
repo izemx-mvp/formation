@@ -986,7 +986,7 @@ function Inscription() {
               value={form.session}
               onChange={(e) => update("session", e.target.value)}
             >
-              <option>Groupe matin (9h00 – 12h00)</option>
+              <option>Groupe matin (10h00 – 13h00)</option>
               <option>Groupe après-midi (14h30 – 17h30)</option>
             </select>
 
