@@ -89,12 +89,19 @@ function Hero() {
     "Ateliers pratiques et quiz interactifs",
     "Sessions limitées à 20 participants",
   ];
-  const floats = [
-    { label: "Agents IA", icon: Bot, pos: "top-4 -left-4 sm:-left-10" },
-    { label: "Automatisation", icon: Workflow, pos: "top-1/3 -right-4 sm:-right-10" },
-    { label: "Productivité", icon: Zap, pos: "bottom-24 -left-6 sm:-left-12" },
-    { label: "ROI", icon: TrendingUp, pos: "bottom-8 right-6" },
-    { label: "Gain de temps", icon: Clock, pos: "top-10 right-8" },
+  const orbitRing1 = [
+    "https://izemx.com/wp-content/uploads/2026/01/Ziri-Community-management.png",
+    "https://izemx.com/wp-content/uploads/2026/01/Ider-SEO.png",
+  ];
+  const orbitRing2 = [
+    "https://izemx.com/wp-content/uploads/2026/01/Aylan-Prospection-et-vente.png",
+    "https://izemx.com/wp-content/uploads/2026/01/Ayal-Service-client.png",
+    "https://izemx.com/wp-content/uploads/2026/01/Aren-Assistante-generale.png",
+  ];
+  const orbitRing3 = [
+    "https://izemx.com/wp-content/uploads/2026/01/Aqal-assistante-judiciaire.png",
+    "https://izemx.com/wp-content/uploads/2026/01/Anir-analyse-des-documents.png",
+    "https://izemx.com/wp-content/uploads/2026/01/Ania-RH.png",
   ];
 
   return (
@@ -148,6 +155,10 @@ function Hero() {
               <span>🕘 Matin : 9h00 – 12h00</span>
               <span>🕝 Après-midi : 14h30 – 17h30</span>
             </div>
+            <div className="mt-4 inline-flex items-center gap-2 rounded-full glass border border-primary/40 px-4 py-2 text-sm font-semibold text-white shadow-[0_0_24px_rgba(0,163,224,0.25)]">
+              <span className="text-primary">Tarif :</span>
+              <span>2 500 MAD <span className="text-xs font-normal text-muted-foreground">/ participant</span></span>
+            </div>
           </div>
 
           <div className="mt-8 flex flex-wrap gap-3">
@@ -167,35 +178,33 @@ function Hero() {
           </div>
         </div>
 
-        <div className="relative mx-auto aspect-square w-full max-w-md">
-          <div className="absolute inset-8 rounded-full bg-gradient-izemx opacity-40 blur-3xl animate-pulse-glow" />
-          <div className="relative h-full w-full overflow-hidden rounded-[2rem] glass-strong glow-blue">
-            <div className="absolute inset-0 bg-gradient-izemx opacity-30" />
-            <div className="absolute inset-0 grid place-items-center text-center">
-              <div className="px-6">
-                <div className="mx-auto grid h-32 w-32 place-items-center rounded-full bg-white/10 text-5xl backdrop-blur">
-                  👤
-                </div>
-                <div className="mt-4 font-display text-lg font-semibold text-white">
-                  Mohsine Bahhou
-                </div>
-                <div className="text-xs text-muted-foreground">Fondateur IZEMX & IAvia</div>
+        <div className="relative mx-auto w-full max-w-md">
+          <div className="hero-ai-orbit" aria-hidden="true">
+            <div className="hero-ai-orbit__glow" />
+            <div className="hero-ai-orbit__core">
+              <div className="hero-ai-orbit__orb">
+                <img
+                  src="https://izemx.com/wp-content/uploads/2025/10/izemx-logo-1-scaled.png"
+                  alt="IZEMX logo"
+                />
               </div>
+            </div>
+            <div className="hero-ai-orbit__ring hero-ai-orbit__ring--1">
+              {orbitRing1.map((src) => (
+                <img key={src} src={src} alt="" />
+              ))}
+            </div>
+            <div className="hero-ai-orbit__ring hero-ai-orbit__ring--2">
+              {orbitRing2.map((src) => (
+                <img key={src} src={src} alt="" />
+              ))}
+            </div>
+            <div className="hero-ai-orbit__ring hero-ai-orbit__ring--3">
+              {orbitRing3.map((src) => (
+                <img key={src} src={src} alt="" />
+              ))}
             </div>
           </div>
-
-          {floats.map(({ label, icon: Icon, pos }, i) => (
-            <div
-              key={label}
-              className={`absolute ${pos} animate-float glass rounded-2xl px-4 py-2.5 text-xs font-semibold text-white shadow-lg`}
-              style={{ animationDelay: `${i * 0.6}s` }}
-            >
-              <div className="flex items-center gap-2">
-                <Icon className="h-4 w-4 text-primary" />
-                {label}
-              </div>
-            </div>
-          ))}
         </div>
       </div>
     </section>
