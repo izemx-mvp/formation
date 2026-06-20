@@ -655,60 +655,130 @@ function Coaching() {
 }
 
 function Trainer() {
+  const stats = [
+    { v: "100+", l: "collaborateurs" },
+    { v: "3", l: "bureaux : Paris · Casablanca · Dubaï" },
+    { v: "ESN", l: "spécialisée IA & automatisation" },
+    { v: "IAvia", l: "1ʳᵉ plateforme marocaine d'agents IA" },
+  ];
   return (
     <section id="formateur" className="py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <div className="grid items-center gap-12 lg:grid-cols-2">
-          <div className="relative mx-auto aspect-[4/5] w-full max-w-md">
-            <div className="absolute inset-0 rounded-3xl bg-gradient-izemx opacity-40 blur-2xl" />
-            <div className="relative h-full w-full overflow-hidden rounded-3xl glass-strong">
-              <div className="absolute inset-0 grid place-items-center bg-gradient-izemx/20">
-                <div className="text-center">
-                  <div className="mx-auto grid h-40 w-40 place-items-center rounded-full bg-white/10 text-7xl backdrop-blur">
-                    👤
-                  </div>
-                  <div className="mt-4 font-display text-2xl font-bold text-white">
-                    Mohsine Bahhou
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    Fondateur IZEMX & IAvia
+        <div className="grid gap-12 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
+          {/* Left: photo + stats */}
+          <div className="space-y-6">
+            <div className="relative mx-auto aspect-[4/5] w-full max-w-sm">
+              <div className="absolute inset-0 rounded-3xl bg-gradient-izemx opacity-40 blur-2xl" />
+              <div className="relative h-full w-full overflow-hidden rounded-3xl glass-strong">
+                <div className="absolute inset-0 grid place-items-center bg-gradient-izemx/20">
+                  <div className="text-center">
+                    <div className="mx-auto grid h-40 w-40 place-items-center rounded-full bg-white/10 text-7xl backdrop-blur">
+                      👤
+                    </div>
+                    <div className="mt-4 font-display text-2xl font-bold text-white">
+                      Mohsine Bahhou
+                    </div>
+                    <div className="text-sm text-muted-foreground">
+                      Président Directeur Général d'IZEMX
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div>
-            <div className="text-xs font-semibold uppercase tracking-widest text-primary">
-              Le formateur
-            </div>
-            <h2 className="mt-3 text-3xl font-bold text-white sm:text-4xl">
-              Un expert reconnu de la <span className="text-gradient">transformation IA</span>
-            </h2>
-            <div className="mt-6 space-y-4 text-muted-foreground">
-              <p>
-                Mohsine Bahhou est le fondateur d'IZEMX et d'IAvia. Il accompagne les
-                entreprises dans leur transformation digitale et l'intégration de
-                l'intelligence artificielle.
-              </p>
-              <p>
-                À travers IZEMX, société spécialisée dans le développement de solutions
-                digitales sur mesure, il pilote des projets innovants en développement web,
-                mobile, automatisation et agents IA.
-              </p>
-              <p>
-                IZEMX est présente à <span className="text-white">Paris</span>,{" "}
-                <span className="text-white">Casablanca</span> et{" "}
-                <span className="text-white">Dubaï</span> et compte plus de{" "}
-                <span className="text-white">100 collaborateurs</span>.
-              </p>
-              <p>Ses travaux ont été relayés par plusieurs médias reconnus.</p>
-            </div>
-            <div className="mt-6 flex flex-wrap gap-3 text-xs text-muted-foreground">
-              {["Forbes", "BFM Business", "Le Figaro"].map((m) => (
-                <span key={m} className="glass rounded-full px-3 py-1">
-                  {m}
-                </span>
+
+            <div className="grid grid-cols-2 gap-3">
+              {stats.map((s) => (
+                <div key={s.l} className="glass rounded-xl p-4 text-center">
+                  <div className="text-gradient font-display text-2xl font-bold">{s.v}</div>
+                  <div className="mt-1 text-[11px] leading-tight text-muted-foreground">
+                    {s.l}
+                  </div>
+                </div>
               ))}
+            </div>
+
+            <div>
+              <div className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+                Médias
+              </div>
+              <div className="mt-3 flex flex-wrap gap-2 text-xs text-muted-foreground">
+                {["Forbes", "BFM Business", "Le Figaro"].map((m) => (
+                  <span key={m} className="glass rounded-full px-3 py-1">
+                    {m}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Right: content */}
+          <div>
+            <div className="inline-flex items-center gap-2 rounded-full bg-primary/15 px-4 py-1.5 text-xs font-semibold text-primary">
+              <Award className="h-3.5 w-3.5" /> Président Directeur Général d'IZEMX
+            </div>
+            <h2 className="mt-4 text-3xl font-bold text-white sm:text-4xl">
+              Un expert reconnu de la{" "}
+              <span className="text-gradient">
+                transformation digitale et de l'intelligence artificielle
+              </span>
+              .
+            </h2>
+            <p className="mt-5 text-muted-foreground">
+              Mohsine Bahhou accompagne les entreprises dans leur transformation digitale,
+              l'automatisation de leurs processus et l'intégration de l'intelligence
+              artificielle.
+            </p>
+
+            <div className="mt-6 glass rounded-2xl p-6">
+              <div className="text-sm font-semibold text-white">À propos d'IZEMX</div>
+              <div className="mt-3 space-y-3 text-sm text-muted-foreground">
+                <p>
+                  IZEMX est une ESN spécialisée dans le développement de solutions digitales
+                  sur mesure, couvrant aussi bien le développement web et mobile que
+                  l'intégration de technologies avancées telles que l'intelligence
+                  artificielle et les architectures décentralisées.
+                </p>
+                <p>
+                  Présente aujourd'hui à{" "}
+                  <span className="text-white">Paris, Casablanca et Dubaï</span>, IZEMX
+                  s'appuie sur une équipe de plus de{" "}
+                  <span className="text-white">100 collaborateurs</span> aux expertises
+                  complémentaires, mobilisés pour concevoir, développer et déployer des
+                  solutions innovantes adaptées aux enjeux métiers de ses clients.
+                </p>
+                <p>
+                  Nous accompagnons nos clients dans une grande variété de secteurs, depuis
+                  la phase de conception jusqu'à la mise en production, dans une logique
+                  d'accompagnement global et durable.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-4 glass-strong rounded-2xl p-6 ring-1 ring-primary/30">
+              <div className="text-sm font-semibold text-white">
+                Fondateur d'IAvia
+              </div>
+              <div className="mt-3 space-y-3 text-sm text-muted-foreground">
+                <p>
+                  Mohsine Bahhou est également le fondateur d'
+                  <span className="text-white">IAvia</span>, la première plateforme marocaine
+                  dédiée aux agents IA.
+                </p>
+                <p>
+                  IAvia aide les entreprises à intégrer facilement des agents intelligents
+                  afin d'automatiser leurs processus, améliorer leur productivité et
+                  accélérer leur transformation digitale.
+                </p>
+              </div>
+              <a
+                href="https://iavia.ai"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-flex items-center gap-2 rounded-full bg-gradient-izemx px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-primary/30 transition-transform hover:scale-105"
+              >
+                Découvrir IAvia
+                <ArrowRight className="h-4 w-4" />
+              </a>
             </div>
           </div>
         </div>
