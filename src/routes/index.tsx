@@ -1017,12 +1017,19 @@ function Inscription() {
               J'accepte d'être recontacté dans le cadre de ma demande d'inscription.
             </label>
 
+            {error && (
+              <div className="sm:col-span-2 rounded-xl bg-destructive/15 px-4 py-3 text-center text-sm text-destructive">
+                {error}
+              </div>
+            )}
+
             <button
               type="submit"
-              className="sm:col-span-2 inline-flex items-center justify-center gap-2 rounded-full bg-gradient-izemx px-6 py-4 font-semibold text-white shadow-lg shadow-primary/40 transition-transform hover:scale-[1.02]"
+              disabled={sending}
+              className="sm:col-span-2 inline-flex items-center justify-center gap-2 rounded-full bg-gradient-izemx px-6 py-4 font-semibold text-white shadow-lg shadow-primary/40 transition-transform hover:scale-[1.02] disabled:opacity-60 disabled:hover:scale-100"
             >
-              Réserver ma place
-              <ArrowRight className="h-4 w-4" />
+              {sending ? "Envoi en cours…" : "Réserver ma place"}
+              {!sending && <ArrowRight className="h-4 w-4" />}
             </button>
 
             <p className="sm:col-span-2 text-center text-xs text-muted-foreground">
