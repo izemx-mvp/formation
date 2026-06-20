@@ -167,17 +167,17 @@ function Hero() {
             </div>
           </div>
 
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="hero-actions mt-8 flex flex-col gap-3.5 sm:flex-row sm:flex-wrap">
             <a
               href="#inscription"
-              className="group inline-flex items-center gap-2 rounded-full bg-gradient-izemx px-6 py-3 font-semibold text-white shadow-lg shadow-primary/40 transition-transform hover:scale-105"
+              className="group inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-gradient-izemx px-6 py-3 font-semibold text-white shadow-lg shadow-primary/40 transition-transform hover:scale-105"
             >
               Réserver ma place
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </a>
             <a
               href="#programme"
-              className="inline-flex items-center gap-2 rounded-full glass px-6 py-3 font-semibold text-white transition-colors hover:bg-white/10"
+              className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full glass px-6 py-3 font-semibold text-white transition-colors hover:bg-white/10"
             >
               Découvrir le programme
             </a>
