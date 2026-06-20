@@ -61,7 +61,7 @@ function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 glass-strong">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
-        <a href="#" className="flex items-center gap-2">
+        <a href="https://izemx.com/" className="flex items-center gap-2 transition-opacity hover:opacity-80">
           <img src={LOGO} alt="IZEMX" className="h-9 w-auto" />
         </a>
         <nav className="hidden items-center gap-8 md:flex">
