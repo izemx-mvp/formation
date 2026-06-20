@@ -852,6 +852,8 @@ function FAQ() {
 
 function Inscription() {
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [form, setForm] = useState({
     prenom: "",
     nom: "",
@@ -867,18 +869,52 @@ function Inscription() {
     setForm((f) => ({ ...f, [k]: v }));
   }
 
-  function handleSubmit(e: FormEvent) {
+  async function handleSubmit(e: FormEvent) {
     e.preventDefault();
-    if (!form.rgpd) return;
-    const msg = `Bonjour,%0A%0AJe souhaite m'inscrire à la formation IA IZEMX.%0A%0APrénom : ${form.prenom}%0ANom : ${form.nom}%0AEntreprise : ${form.entreprise}%0AFonction : ${form.fonction}%0AEmail : ${form.email}%0ATéléphone : ${form.telephone}%0ASession : ${form.session}%0A%0AMerci de me recontacter afin de finaliser mon inscription.`;
-    const subject = encodeURIComponent("Nouvelle inscription — Formation IA IZEMX");
-    const body = decodeURIComponent(msg);
-    window.open(
-      `mailto:formation@izemx.com?subject=${subject}&body=${encodeURIComponent(body)}`,
-      "_blank",
-    );
-    window.open(`https://wa.me/212661403350?text=${msg}`, "_blank");
-    setSubmitted(true);
+    if (!form.rgpd || sending) return;
+    setSending(true);
+    setError(null);
+    try {
+      const res = await fetch("/api/public/inscription", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          prenom: form.prenom,
+          nom: form.nom,
+          entreprise: form.entreprise,
+          fonction: form.fonction,
+          email: form.email,
+          telephone: form.telephone,
+          session: form.session,
+        }),
+      });
+      if (!res.ok) throw new Error("send-failed");
+
+      const lines = [
+        "Bonjour,",
+        "",
+        "Je souhaite m'inscrire à la formation IA IZEMX.",
+        "",
+        `Prénom : ${form.prenom}`,
+        `Nom : ${form.nom}`,
+        `Entreprise : ${form.entreprise}`,
+        `Fonction : ${form.fonction}`,
+        `Email : ${form.email}`,
+        `Téléphone : ${form.telephone}`,
+        `Session : ${form.session}`,
+        "",
+        "Merci de me recontacter afin de finaliser mon inscription.",
+      ];
+      const waUrl = `https://wa.me/212661403350?text=${encodeURIComponent(lines.join("\n"))}`;
+      window.open(waUrl, "_blank", "noopener,noreferrer");
+      setSubmitted(true);
+    } catch {
+      setError(
+        "Une erreur est survenue lors de l'envoi. Veuillez réessayer ou nous contacter directement.",
+      );
+    } finally {
+      setSending(false);
+    }
   }
 
   if (submitted) {
