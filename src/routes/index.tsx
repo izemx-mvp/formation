@@ -93,6 +93,7 @@ function Hero() {
     "Travail sur votre propre activité",
     "Ateliers pratiques et quiz interactifs",
     "Sessions limitées à 20 participants",
+    "Attestation de formation délivrée par IZEMX",
   ];
   const orbitRing1 = [
     "https://izemx.com/wp-content/uploads/2026/01/Ziri-Community-management.png",
