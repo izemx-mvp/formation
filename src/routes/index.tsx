@@ -679,7 +679,7 @@ function Trainer() {
             <div className="relative h-full min-h-[520px] overflow-hidden rounded-[2rem] glass-strong ring-1 ring-primary/30 shadow-2xl shadow-primary/20">
               <img
                 src="https://izemx.com/JJ5A1753-2.jpg"
-                alt="Mohsine Bahhou, CEO d'IZEMX & iavia"
+                alt="Mohsine Bahhou, CEO d'IZEMX & IAVIA"
                 className="absolute inset-0 h-full w-full object-cover"
                 loading="lazy"
               />
@@ -688,7 +688,7 @@ function Trainer() {
                   Mohsine Bahhou
                 </div>
                 <div className="mt-1 text-sm text-white/80">
-                  CEO d'IZEMX & iavia
+                  CEO d'IZEMX & IAVIA
                 </div>
               </div>
             </div>
@@ -697,7 +697,7 @@ function Trainer() {
           {/* Right: content */}
           <div>
             <div className="inline-flex items-center gap-2 rounded-full bg-primary/15 px-4 py-1.5 text-xs font-semibold text-primary">
-              <Award className="h-3.5 w-3.5" /> CEO d'IZEMX & iavia
+              <Award className="h-3.5 w-3.5" /> CEO d'IZEMX & IAVIA
             </div>
             <h2 className="mt-4 text-3xl font-bold text-white sm:text-4xl">
               Un expert reconnu de la{" "}
@@ -739,7 +739,7 @@ function Trainer() {
 
             <div className="mt-4 glass-strong rounded-2xl p-6 ring-1 ring-primary/30">
               <div className="text-sm font-semibold text-white">
-                À propos d'iavia
+                À propos d'IAVIA
               </div>
               <div className="mt-3 space-y-3 text-sm text-muted-foreground">
                 <p>
@@ -754,12 +754,12 @@ function Trainer() {
                 </p>
               </div>
               <a
-                href="https://iavia.ai"
+                href="https://iavia.ai/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-4 inline-flex items-center gap-2 rounded-full bg-gradient-izemx px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-primary/30 transition-transform hover:scale-105"
               >
-                Découvrir iavia
+                Découvrir IAVIA
                 <ArrowRight className="h-4 w-4" />
               </a>
             </div>
