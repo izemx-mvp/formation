@@ -202,23 +202,160 @@ function Hero() {
   );
 }
 
+const PRESS_LOGOS: { src: string; alt: string; square?: boolean }[] = [
+  { src: "https://izemx.com/wp-content/uploads/2026/03/radio-plus.png", alt: "Radio Plus" },
+  { src: "https://izemx.com/wp-content/uploads/2026/02/mfm.webp", alt: "MFM Radio" },
+  { src: "https://izemx.com/wp-content/uploads/2026/03/lopinion-dj.webp", alt: "LODJ" },
+  { src: "https://izemx.com/wp-content/uploads/2026/02/lnt.webp", alt: "La Tribune" },
+  { src: "https://izemx.com/wp-content/uploads/2026/03/le-figaro.webp", alt: "Le Figaro" },
+  { src: "https://izemx.com/wp-content/uploads/2026/02/forbes.webp", alt: "Forbes" },
+  { src: "https://izemx.com/wp-content/uploads/2026/02/bfm.webp", alt: "BFM Business", square: true },
+  { src: "https://izemx.com/wp-content/uploads/2026/02/le-new.webp", alt: "Le New" },
+  { src: "https://izemx.com/wp-content/uploads/2026/02/hit-radio.webp", alt: "Hit Radio", square: true },
+  { src: "https://izemx.com/wp-content/uploads/2026/02/atlantic.webp", alt: "Atlantic Radio" },
+];
+
 function SocialProof() {
+  const trackRef = React.useRef<HTMLDivElement | null>(null);
+
+  React.useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return;
+    const original = Array.from(track.children) as HTMLElement[];
+    for (let c = 0; c < 2; c++) {
+      original.forEach((item) => track.appendChild(item.cloneNode(true)));
+    }
+    const gap = parseFloat(getComputedStyle(track).gap) || 60;
+    let x = 0;
+    let setWidth = 0;
+    let raf = 0;
+    const speed = 0.4;
+
+    function measure() {
+      if (!track) return;
+      const origItems = Array.from(track.children).slice(0, original.length) as HTMLElement[];
+      let total = 0;
+      origItems.forEach((item) => {
+        total += item.getBoundingClientRect().width;
+      });
+      total += gap * original.length;
+      setWidth = total;
+    }
+    function tick() {
+      if (!track) return;
+      x -= speed;
+      if (x <= -setWidth) x += setWidth;
+      track.style.transform = `translateX(${x}px)`;
+      raf = requestAnimationFrame(tick);
+    }
+    const images = track.querySelectorAll("img");
+    let loaded = 0;
+    const onLoad = () => {
+      loaded++;
+      if (loaded >= images.length) {
+        measure();
+        tick();
+      }
+    };
+    if (!images.length) {
+      measure();
+      tick();
+    } else {
+      images.forEach((img) => {
+        if ((img as HTMLImageElement).complete) onLoad();
+        else {
+          img.addEventListener("load", onLoad);
+          img.addEventListener("error", onLoad);
+        }
+      });
+    }
+    return () => cancelAnimationFrame(raf);
+  }, []);
+
   return (
-    <section className="border-y border-white/5 py-16">
-      <div className="mx-auto max-w-7xl px-4 text-center sm:px-6">
-        <h2 className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
-          Ils parlent d'IZEMX
-        </h2>
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-x-12 gap-y-6 text-2xl font-display font-bold text-white/60">
-          <span>Forbes</span>
-          <span>BFM Business</span>
-          <span>Le Figaro</span>
-        </div>
-        <p className="mt-6 text-sm text-muted-foreground">
-          Les expertises et projets portés par IZEMX ont été relayés par plusieurs médias
-          reconnus.
-        </p>
+    <section className="press-section">
+      <style>{`
+        .press-section { padding: 50px 0; overflow: hidden; width: 100%; }
+        .press-title-wrap { text-align: center; margin-bottom: 40px; }
+        .press-eyebrow {
+          display: inline-flex; align-items: center; gap: 10px;
+          font-family: 'Orbitron', sans-serif; font-size: 11px; font-weight: 600;
+          letter-spacing: 4px; text-transform: uppercase;
+          color: rgba(255,255,255,0.35); margin-bottom: 12px;
+        }
+        .press-eyebrow::before, .press-eyebrow::after {
+          content: ''; width: 30px; height: 1px; background: rgba(255,255,255,0.2);
+        }
+        .press-title {
+          font-family: 'Orbitron', sans-serif;
+          font-size: clamp(22px, 3.5vw, 36px); font-weight: 700;
+          color: white; letter-spacing: 2px; text-transform: uppercase; margin: 0;
+        }
+        .press-title span {
+          background: #4B9BE0;
+          -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+          background-clip: text; color: transparent;
+        }
+        .press-carousel-separator {
+          width: 60%; margin: 0 auto; height: 1px;
+          background: linear-gradient(to right, transparent, rgba(255,255,255,0.08), transparent);
+        }
+        .press-carousel-wrapper {
+          position: relative; overflow: hidden; width: 100%; padding: 20px 0;
+        }
+        .press-carousel-wrapper::before, .press-carousel-wrapper::after {
+          content: ''; position: absolute; top: 0; width: 180px; height: 100%;
+          z-index: 2; pointer-events: none;
+        }
+        .press-carousel-wrapper::before { left: 0; background: linear-gradient(to right, #020710 20%, transparent); }
+        .press-carousel-wrapper::after { right: 0; background: linear-gradient(to left, #020710 20%, transparent); }
+        .press-carousel-track {
+          display: flex; gap: 60px; width: max-content; align-items: center;
+          padding: 16px 0; will-change: transform;
+        }
+        .press-logo-item {
+          flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+          filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4));
+          transition: filter 0.3s ease, transform 0.3s ease;
+        }
+        .press-logo-item:hover {
+          filter: drop-shadow(0 8px 24px rgba(99,179,237,0.3)) brightness(1.2);
+          transform: translateY(-5px);
+        }
+        .press-logo-item img { height: 120px; width: auto; max-width: 240px; object-fit: contain; }
+        .press-logo-item.square img { height: 125px; width: 125px; object-fit: contain; }
+        @media (max-width: 768px) {
+          .press-carousel-wrapper::before, .press-carousel-wrapper::after { width: 80px; }
+          .press-logo-item img { height: 90px; max-width: 180px; }
+          .press-logo-item.square img { height: 95px; width: 95px; }
+          .press-carousel-track { gap: 40px; }
+        }
+        @media (max-width: 480px) {
+          .press-carousel-wrapper::before, .press-carousel-wrapper::after { width: 50px; }
+          .press-logo-item img { height: 70px; max-width: 140px; }
+          .press-logo-item.square img { height: 75px; width: 75px; }
+          .press-carousel-track { gap: 28px; }
+        }
+      `}</style>
+
+      <div className="press-title-wrap">
+        <div className="press-eyebrow">Médias & Presse</div>
+        <h2 className="press-title">Ils parlent de <span>nous</span></h2>
       </div>
+
+      <div className="press-carousel-separator" />
+
+      <div className="press-carousel-wrapper">
+        <div className="press-carousel-track" ref={trackRef}>
+          {PRESS_LOGOS.map((logo, i) => (
+            <div key={i} className={`press-logo-item${logo.square ? " square" : ""}`}>
+              <img src={logo.src} alt={logo.alt} loading="lazy" />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="press-carousel-separator" />
     </section>
   );
 }
