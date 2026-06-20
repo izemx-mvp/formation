@@ -845,7 +845,7 @@ function Inscription() {
     fonction: "",
     email: "",
     telephone: "",
-    session: "Groupe matin (9h00 – 12h00)",
+    session: "Groupe matin (10h00 – 13h00)",
     rgpd: false,
   });
 
