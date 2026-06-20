@@ -21,6 +21,11 @@ import {
   MessageCircle,
   ChevronDown,
   ArrowRight,
+  MapPin,
+  Facebook,
+  Instagram,
+  Linkedin,
+  Youtube,
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -1023,58 +1028,72 @@ function Inscription() {
 }
 
 function Footer() {
+  const offices = [
+    {
+      region: "Europe",
+      address: "78 avenue des champs elysées, Bureau 326, 75008, Paris",
+      phone: "+33 184 803727",
+      email: "contact@izemx.com",
+    },
+    {
+      region: "Africa",
+      address: "Résidence le Printemps d'Anfa, 96 Boulevard Anfa, Casablanca",
+      phone: "+212 661 403350",
+      email: "contact@izemx.com",
+    },
+    {
+      region: "Moyen-Orient",
+      address: "FZCO, IFZA Business Park, DDP, Dubai Silicon Oasis, Dubaï, Émirats Arabes Unis",
+      phone: "+971 55 998 8456",
+      email: "contact@izemx.com",
+    },
+  ];
+
   return (
-    <footer className="border-t border-white/10 py-12">
-      <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 md:grid-cols-4">
-        <div>
-          <img src={LOGO} alt="IZEMX" className="h-10 w-auto" />
-          <p className="mt-4 text-sm text-muted-foreground">
-            Solutions digitales sur mesure & intelligence artificielle.
-          </p>
-        </div>
-        <div>
-          <div className="text-sm font-semibold text-white">Liens</div>
-          <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
-            <li>
-              <a href="https://izemx.com" className="hover:text-primary">
-                Site principal
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-primary">
-                Mentions légales
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-primary">
-                Politique de confidentialité
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <div className="text-sm font-semibold text-white">Contact</div>
-          <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
-            <li className="flex items-center gap-2">
-              <Mail className="h-3.5 w-3.5" /> formation@izemx.com
-            </li>
-            <li className="flex items-center gap-2">
-              <Phone className="h-3.5 w-3.5" /> +212 661 403 350
-            </li>
-            <li className="flex items-center gap-2">
-              <MessageCircle className="h-3.5 w-3.5" /> WhatsApp
-            </li>
-          </ul>
-        </div>
-        <div>
-          <div className="glass rounded-xl p-4 text-xs text-muted-foreground">
-            <Users className="mb-2 h-4 w-4 text-primary" />
-            Places limitées à 20 participants par groupe.
+    <footer className="border-t border-white/10 py-16">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+        <h2 className="mb-12 text-center text-2xl font-semibold text-white">Contact</h2>
+        <div className="grid gap-10 md:grid-cols-4">
+          <div>
+            <img src={LOGO} alt="IZEMX" className="h-10 w-auto" />
+            <p className="mt-5 text-lg font-semibold text-white">Make Your Future Roar</p>
+            <div className="mt-5 flex items-center gap-4 text-muted-foreground">
+              <a href="#" aria-label="Facebook" className="hover:text-primary"><Facebook className="h-5 w-5" /></a>
+              <a href="#" aria-label="X" className="hover:text-primary"><X className="h-5 w-5" /></a>
+              <a href="#" aria-label="Instagram" className="hover:text-primary"><Instagram className="h-5 w-5" /></a>
+              <a href="#" aria-label="LinkedIn" className="hover:text-primary"><Linkedin className="h-5 w-5" /></a>
+              <a href="#" aria-label="YouTube" className="hover:text-primary"><Youtube className="h-5 w-5" /></a>
+            </div>
+            <div className="mt-4 flex items-center gap-2 text-sm">
+              <button aria-label="Français" className="text-base">🇫🇷</button>
+              <button aria-label="English" className="text-base">🇬🇧</button>
+            </div>
           </div>
+
+          {offices.map((o) => (
+            <div key={o.region}>
+              <div className="text-lg font-semibold text-primary">{o.region}</div>
+              <ul className="mt-5 space-y-4 text-sm text-muted-foreground">
+                <li className="flex items-start gap-3">
+                  <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                  <span>{o.address}</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <Phone className="h-4 w-4 shrink-0 text-primary" />
+                  <a href={`tel:${o.phone.replace(/\s/g, "")}`} className="hover:text-primary">{o.phone}</a>
+                </li>
+                <li className="flex items-center gap-3">
+                  <Mail className="h-4 w-4 shrink-0 text-primary" />
+                  <a href={`mailto:${o.email}`} className="hover:text-primary">{o.email}</a>
+                </li>
+              </ul>
+            </div>
+          ))}
         </div>
-      </div>
-      <div className="mt-10 text-center text-xs text-muted-foreground">
-        © {new Date().getFullYear()} IZEMX — Tous droits réservés.
+
+        <div className="mt-12 border-t border-white/10 pt-6 text-center text-sm text-muted-foreground">
+          © Copyright {new Date().getFullYear()} IZEMX. Tous Droits Réservés
+        </div>
       </div>
     </footer>
   );
