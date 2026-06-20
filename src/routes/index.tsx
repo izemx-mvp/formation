@@ -216,9 +216,9 @@ const PRESS_LOGOS: { src: string; alt: string; square?: boolean }[] = [
 ];
 
 function SocialProof() {
-  const trackRef = React.useRef<HTMLDivElement | null>(null);
+  const trackRef = useRef<HTMLDivElement | null>(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const track = trackRef.current;
     if (!track) return;
     const original = Array.from(track.children) as HTMLElement[];
