@@ -744,11 +744,11 @@ function Trainer() {
               <div className="mt-3 space-y-3 text-sm text-muted-foreground">
                 <p>
                   Mohsine Bahhou pilote également{" "}
-                  <span className="text-white">iavia</span>, la première plateforme marocaine
+                  <span className="text-white">IAVIA</span>, la première plateforme marocaine
                   dédiée aux agents IA.
                 </p>
                 <p>
-                  iavia aide les entreprises à intégrer facilement des agents intelligents
+                  IAVIA aide les entreprises à intégrer facilement des agents intelligents
                   afin d'automatiser leurs processus, améliorer leur productivité et
                   accélérer leur transformation digitale.
                 </p>
