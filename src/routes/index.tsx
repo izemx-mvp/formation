@@ -178,35 +178,33 @@ function Hero() {
           </div>
         </div>
 
-        <div className="relative mx-auto aspect-square w-full max-w-md">
-          <div className="absolute inset-8 rounded-full bg-gradient-izemx opacity-40 blur-3xl animate-pulse-glow" />
-          <div className="relative h-full w-full overflow-hidden rounded-[2rem] glass-strong glow-blue">
-            <div className="absolute inset-0 bg-gradient-izemx opacity-30" />
-            <div className="absolute inset-0 grid place-items-center text-center">
-              <div className="px-6">
-                <div className="mx-auto grid h-32 w-32 place-items-center rounded-full bg-white/10 text-5xl backdrop-blur">
-                  👤
-                </div>
-                <div className="mt-4 font-display text-lg font-semibold text-white">
-                  Mohsine Bahhou
-                </div>
-                <div className="text-xs text-muted-foreground">Fondateur IZEMX & IAvia</div>
+        <div className="relative mx-auto w-full max-w-md">
+          <div className="hero-ai-orbit" aria-hidden="true">
+            <div className="hero-ai-orbit__glow" />
+            <div className="hero-ai-orbit__core">
+              <div className="hero-ai-orbit__orb">
+                <img
+                  src="https://izemx.com/wp-content/uploads/2025/10/izemx-logo-1-scaled.png"
+                  alt="IZEMX logo"
+                />
               </div>
+            </div>
+            <div className="hero-ai-orbit__ring hero-ai-orbit__ring--1">
+              {orbitRing1.map((src) => (
+                <img key={src} src={src} alt="" />
+              ))}
+            </div>
+            <div className="hero-ai-orbit__ring hero-ai-orbit__ring--2">
+              {orbitRing2.map((src) => (
+                <img key={src} src={src} alt="" />
+              ))}
+            </div>
+            <div className="hero-ai-orbit__ring hero-ai-orbit__ring--3">
+              {orbitRing3.map((src) => (
+                <img key={src} src={src} alt="" />
+              ))}
             </div>
           </div>
-
-          {floats.map(({ label, icon: Icon, pos }, i) => (
-            <div
-              key={label}
-              className={`absolute ${pos} animate-float glass rounded-2xl px-4 py-2.5 text-xs font-semibold text-white shadow-lg`}
-              style={{ animationDelay: `${i * 0.6}s` }}
-            >
-              <div className="flex items-center gap-2">
-                <Icon className="h-4 w-4 text-primary" />
-                {label}
-              </div>
-            </div>
-          ))}
         </div>
       </div>
     </section>
