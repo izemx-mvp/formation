@@ -370,7 +370,7 @@ function ForWhom() {
     { icon: Rocket, text: "Vous souhaitez lancer un projet basé sur l'IA" },
     { icon: Users, text: "Vous souhaitez améliorer la productivité de vos équipes" },
     { icon: Zap, text: "Vous cherchez à réduire les tâches administratives chronophages" },
-    { icon: Target, text: "Vous voulez prendre une longueur d'avance sur votre marché" },
+    { icon: Target, text: "Vous voulez transformer votre marché avec l'intelligence artificielle" },
   ];
   return (
     <section className="py-24">
