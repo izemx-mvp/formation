@@ -158,8 +158,8 @@ function Hero() {
               <div>Samedi 25 juillet</div>
             </div>
             <div className="mt-3 flex flex-wrap gap-4 text-xs text-muted-foreground">
-              <span>🕘 Matin : 9h00 – 12h00</span>
-              <span>🕝 Après-midi : 14h30 – 17h30</span>
+              <span>🕘 Groupe matin : 10h00 – 13h00</span>
+              <span>🕝 Groupe après-midi : 14h30 – 17h30</span>
             </div>
             <div className="mt-4 inline-flex items-center gap-2 rounded-full glass border border-primary/40 px-4 py-2 text-sm font-semibold text-white shadow-[0_0_24px_rgba(0,163,224,0.25)]">
               <span className="text-primary">Tarif :</span>
