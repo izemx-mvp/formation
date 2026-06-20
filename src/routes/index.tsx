@@ -928,12 +928,17 @@ function Inscription() {
         <div className="glass-strong rounded-3xl p-8 sm:p-12 glow-blue">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-white sm:text-4xl">
-              Réservez votre place pour la{" "}
-              <span className="text-gradient">session de juillet</span>
+              Réservez votre place — {" "}
+              <span className="text-gradient">Session juillet</span>
             </h2>
-            <p className="mt-3 text-muted-foreground">
-              Les places sont limitées à 20 participants par groupe.
-            </p>
+            <div className="mt-5 inline-flex items-center gap-2 rounded-full glass-strong border border-primary/40 px-5 py-2 text-sm font-semibold text-primary shadow-[0_0_24px_rgba(0,163,224,0.35)]">
+              <Sparkles className="h-4 w-4" />
+              <span style={{ color: "#00A3E0" }}>Places limitées à 20 participants par groupe.</span>
+            </div>
+            <div className="mt-4 inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs text-foreground/80 ml-2">
+              <Award className="h-3.5 w-3.5 text-primary" />
+              Attestation de formation délivrée par IZEMX
+            </div>
           </div>
 
           <form onSubmit={handleSubmit} className="mt-10 grid gap-4 sm:grid-cols-2">
