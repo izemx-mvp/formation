@@ -789,27 +789,33 @@ function Trainer() {
 
 function FAQ() {
   const items = [
-    { q: "Faut-il savoir coder ?", a: "Non." },
-    { q: "Cette formation est-elle adaptée aux débutants ?", a: "Oui." },
+    {
+      q: "Faut-il savoir coder ?",
+      a: "Non. Cette formation est accessible aux profils non techniques. Les outils présentés ont été sélectionnés pour leur simplicité d'utilisation et leur efficacité. L'objectif est de vous permettre de déployer rapidement des solutions concrètes, même sans compétences en développement.",
+    },
+    {
+      q: "Cette formation est-elle adaptée aux débutants ?",
+      a: "Oui. La formation a été conçue pour accompagner les participants, quel que soit leur niveau de départ. Nous avançons progressivement, avec des démonstrations, des ateliers pratiques et un accompagnement personnalisé.",
+    },
     {
       q: "Puis-je venir avec mon propre projet ?",
-      a: "Oui, c'est même recommandé.",
+      a: "Oui, c'est même fortement recommandé. Tout au long de la formation, vous appliquerez les concepts abordés à votre propre activité afin de repartir avec des résultats concrets.",
     },
     {
       q: "Les sessions sont-elles enregistrées ?",
-      a: "Oui, un replay est mis à disposition des participants pendant 30 jours.",
+      a: "Oui. Le replay de chaque session sera mis à votre disposition après chaque atelier.",
     },
     {
       q: "Quels outils seront utilisés ?",
-      a: "ChatGPT, Claude, n8n, Make et plusieurs plateformes d'agents IA.",
+      a: "Nous utiliserons notamment ChatGPT, Claude, n8n et Lovable. Cette sélection pourra évoluer en fonction des besoins des participants.",
     },
     {
       q: "Comment se déroule le coaching individuel ?",
-      a: "Une visio d'une heure planifiée à votre convenance après la dernière session.",
+      a: "Chaque participant bénéficie d'une session individuelle d'une heure afin d'analyser son activité, valider son projet et construire sa feuille de route IA.",
     },
     {
-      q: "Quels sont les moyens de paiement ?",
-      a: "Carte bancaire et virement bancaire.",
+      q: "Quels sont les moyens de paiement acceptés ?",
+      a: "Le règlement peut être effectué par carte bancaire ou par virement bancaire.",
     },
   ];
   const [open, setOpen] = useState<number | null>(0);
