@@ -664,58 +664,27 @@ function Coaching() {
 }
 
 function Trainer() {
-  const stats = [
-    { v: "100+", l: "collaborateurs" },
-    { v: "3", l: "bureaux : Paris · Casablanca · Dubaï" },
-    { v: "ESN", l: "spécialisée IA & automatisation" },
-    { v: "IAvia", l: "1ʳᵉ plateforme marocaine d'agents IA" },
-  ];
   return (
     <section id="formateur" className="py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <div className="grid gap-12 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
-          {/* Left: photo + stats */}
-          <div className="space-y-6">
-            <div className="relative mx-auto aspect-[4/5] w-full max-w-sm">
-              <div className="absolute inset-0 rounded-3xl bg-gradient-izemx opacity-40 blur-2xl" />
-              <div className="relative h-full w-full overflow-hidden rounded-3xl glass-strong">
-                <div className="absolute inset-0 grid place-items-center bg-gradient-izemx/20">
-                  <div className="text-center">
-                    <div className="mx-auto grid h-40 w-40 place-items-center rounded-full bg-white/10 text-7xl backdrop-blur">
-                      👤
-                    </div>
-                    <div className="mt-4 font-display text-2xl font-bold text-white">
-                      Mohsine Bahhou
-                    </div>
-                    <div className="text-sm text-muted-foreground">
-                      Président Directeur Général d'IZEMX
-                    </div>
-                  </div>
+        <div className="grid gap-12 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:items-stretch">
+          {/* Left: portrait */}
+          <div className="relative">
+            <div className="absolute -inset-4 rounded-[2rem] bg-gradient-izemx opacity-30 blur-3xl" />
+            <div className="relative h-full min-h-[520px] overflow-hidden rounded-[2rem] glass-strong ring-1 ring-primary/30 shadow-2xl shadow-primary/20">
+              <img
+                src="https://izemx.com/JJ5A1753-2.jpg"
+                alt="Mohsine Bahhou, CEO d'IZEMX & iavia"
+                className="absolute inset-0 h-full w-full object-cover"
+                loading="lazy"
+              />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/50 to-transparent p-6 pt-20">
+                <div className="font-display text-2xl font-bold text-white">
+                  Mohsine Bahhou
                 </div>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 gap-3">
-              {stats.map((s) => (
-                <div key={s.l} className="glass rounded-xl p-4 text-center">
-                  <div className="text-gradient font-display text-2xl font-bold">{s.v}</div>
-                  <div className="mt-1 text-[11px] leading-tight text-muted-foreground">
-                    {s.l}
-                  </div>
+                <div className="mt-1 text-sm text-white/80">
+                  CEO d'IZEMX & iavia
                 </div>
-              ))}
-            </div>
-
-            <div>
-              <div className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-                Médias
-              </div>
-              <div className="mt-3 flex flex-wrap gap-2 text-xs text-muted-foreground">
-                {["Forbes", "BFM Business", "Le Figaro"].map((m) => (
-                  <span key={m} className="glass rounded-full px-3 py-1">
-                    {m}
-                  </span>
-                ))}
               </div>
             </div>
           </div>
@@ -723,7 +692,7 @@ function Trainer() {
           {/* Right: content */}
           <div>
             <div className="inline-flex items-center gap-2 rounded-full bg-primary/15 px-4 py-1.5 text-xs font-semibold text-primary">
-              <Award className="h-3.5 w-3.5" /> Président Directeur Général d'IZEMX
+              <Award className="h-3.5 w-3.5" /> CEO d'IZEMX & iavia
             </div>
             <h2 className="mt-4 text-3xl font-bold text-white sm:text-4xl">
               Un expert reconnu de la{" "}
@@ -765,16 +734,16 @@ function Trainer() {
 
             <div className="mt-4 glass-strong rounded-2xl p-6 ring-1 ring-primary/30">
               <div className="text-sm font-semibold text-white">
-                Fondateur d'IAvia
+                À propos d'iavia
               </div>
               <div className="mt-3 space-y-3 text-sm text-muted-foreground">
                 <p>
-                  Mohsine Bahhou est également le fondateur d'
-                  <span className="text-white">IAvia</span>, la première plateforme marocaine
+                  Mohsine Bahhou pilote également{" "}
+                  <span className="text-white">iavia</span>, la première plateforme marocaine
                   dédiée aux agents IA.
                 </p>
                 <p>
-                  IAvia aide les entreprises à intégrer facilement des agents intelligents
+                  iavia aide les entreprises à intégrer facilement des agents intelligents
                   afin d'automatiser leurs processus, améliorer leur productivité et
                   accélérer leur transformation digitale.
                 </p>
@@ -785,7 +754,7 @@ function Trainer() {
                 rel="noopener noreferrer"
                 className="mt-4 inline-flex items-center gap-2 rounded-full bg-gradient-izemx px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-primary/30 transition-transform hover:scale-105"
               >
-                Découvrir IAvia
+                Découvrir iavia
                 <ArrowRight className="h-4 w-4" />
               </a>
             </div>
