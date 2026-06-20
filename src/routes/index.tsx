@@ -364,10 +364,12 @@ function ForWhom() {
   const items = [
     { icon: Briefcase, text: "Vous dirigez une entreprise" },
     { icon: Clock, text: "Vous perdez du temps sur des tâches répétitives" },
-    { icon: Brain, text: "Vous utilisez déjà ChatGPT mais voulez aller plus loin" },
+    { icon: Brain, text: "Vous utilisez déjà ChatGPT mais souhaitez aller plus loin" },
     { icon: Workflow, text: "Vous souhaitez automatiser votre activité" },
     { icon: Bot, text: "Vous souhaitez créer des agents IA" },
     { icon: Rocket, text: "Vous souhaitez lancer un projet basé sur l'IA" },
+    { icon: Users, text: "Vous souhaitez améliorer la productivité de vos équipes" },
+    { icon: Zap, text: "Vous cherchez à réduire les tâches administratives chronophages" },
     { icon: Target, text: "Vous voulez prendre une longueur d'avance sur votre marché" },
   ];
   return (
