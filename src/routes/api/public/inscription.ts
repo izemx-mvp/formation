@@ -18,7 +18,7 @@ function getSql() {
       database,
       user,
       password,
-      ssl: "require",
+      ssl: false,
       prepare: false,
     });
   }
