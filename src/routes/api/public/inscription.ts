@@ -1,4 +1,39 @@
 import { createFileRoute } from "@tanstack/react-router";
+import postgres from "postgres";
+
+let sqlClient: ReturnType<typeof postgres> | null = null;
+let schemaReady: Promise<void> | null = null;
+
+function getSql() {
+  const url = process.env.DATABASE_URL;
+  if (!url) return null;
+  if (!sqlClient) {
+    sqlClient = postgres(url, { ssl: "require", prepare: false });
+  }
+  return sqlClient;
+}
+
+async function ensureSchema(sql: ReturnType<typeof postgres>) {
+  if (!schemaReady) {
+    schemaReady = sql`
+      CREATE TABLE IF NOT EXISTS leads (
+        id SERIAL PRIMARY KEY,
+        prenom TEXT,
+        nom TEXT,
+        entreprise TEXT,
+        fonction TEXT,
+        email TEXT,
+        telephone TEXT,
+        session TEXT,
+        created_at TIMESTAMP DEFAULT NOW()
+      )
+    `.then(() => undefined).catch((e) => {
+      schemaReady = null;
+      throw e;
+    });
+  }
+  return schemaReady;
+}
 
 const CORS = {
   "Access-Control-Allow-Origin": "*",
