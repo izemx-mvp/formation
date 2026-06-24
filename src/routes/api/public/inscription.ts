@@ -5,10 +5,22 @@ let sqlClient: ReturnType<typeof postgres> | null = null;
 let schemaReady: Promise<void> | null = null;
 
 function getSql() {
-  const url = process.env.DATABASE_URL;
-  if (!url) return null;
+  const host = process.env.DB_HOST;
+  const port = process.env.DB_PORT;
+  const database = process.env.DB_NAME;
+  const user = process.env.DB_USER;
+  const password = process.env.DB_PASSWORD;
+  if (!host || !port || !database || !user || !password) return null;
   if (!sqlClient) {
-    sqlClient = postgres(url, { ssl: "require", prepare: false });
+    sqlClient = postgres({
+      host,
+      port: Number(port),
+      database,
+      user,
+      password,
+      ssl: "require",
+      prepare: false,
+    });
   }
   return sqlClient;
 }
