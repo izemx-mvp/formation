@@ -859,6 +859,19 @@ function Inscription() {
     setSending(true);
     setError(null);
     try {
+      fetch("/api/public/inscription", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          prenom: form.prenom,
+          nom: form.nom,
+          entreprise: form.entreprise,
+          fonction: form.fonction,
+          email: form.email,
+          telephone: form.telephone,
+          session: form.session,
+        }),
+      }).catch(() => {});
 
       const lines = [
         "Bonjour,",
