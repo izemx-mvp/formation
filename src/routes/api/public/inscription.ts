@@ -94,6 +94,21 @@ export const Route = createFileRoute("/api/public/inscription")({
           }
           const payload = data as Payload;
 
+          try {
+            const sql = getSql();
+            if (sql) {
+              await ensureSchema(sql);
+              await sql`
+                INSERT INTO leads (prenom, nom, entreprise, fonction, email, telephone, session)
+                VALUES (${payload.prenom}, ${payload.nom}, ${payload.entreprise}, ${payload.fonction}, ${payload.email}, ${payload.telephone}, ${payload.session})
+              `;
+            } else {
+              console.warn("DATABASE_URL not set — skipping lead insert");
+            }
+          } catch (dbErr) {
+            console.error("DB insert error", dbErr);
+          }
+
           const LOVABLE_API_KEY = process.env.LOVABLE_API_KEY;
           const RESEND_API_KEY = process.env.RESEND_API_KEY;
 
