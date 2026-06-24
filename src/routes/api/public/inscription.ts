@@ -1,4 +1,39 @@
 import { createFileRoute } from "@tanstack/react-router";
+import postgres from "postgres";
+
+let sqlClient: ReturnType<typeof postgres> | null = null;
+let schemaReady: Promise<void> | null = null;
+
+function getSql() {
+  const url = process.env.DATABASE_URL;
+  if (!url) return null;
+  if (!sqlClient) {
+    sqlClient = postgres(url, { ssl: "require", prepare: false });
+  }
+  return sqlClient;
+}
+
+async function ensureSchema(sql: ReturnType<typeof postgres>) {
+  if (!schemaReady) {
+    schemaReady = sql`
+      CREATE TABLE IF NOT EXISTS leads (
+        id SERIAL PRIMARY KEY,
+        prenom TEXT,
+        nom TEXT,
+        entreprise TEXT,
+        fonction TEXT,
+        email TEXT,
+        telephone TEXT,
+        session TEXT,
+        created_at TIMESTAMP DEFAULT NOW()
+      )
+    `.then(() => undefined).catch((e) => {
+      schemaReady = null;
+      throw e;
+    });
+  }
+  return schemaReady;
+}
 
 const CORS = {
   "Access-Control-Allow-Origin": "*",
@@ -58,6 +93,21 @@ export const Route = createFileRoute("/api/public/inscription")({
             }
           }
           const payload = data as Payload;
+
+          try {
+            const sql = getSql();
+            if (sql) {
+              await ensureSchema(sql);
+              await sql`
+                INSERT INTO leads (prenom, nom, entreprise, fonction, email, telephone, session)
+                VALUES (${payload.prenom}, ${payload.nom}, ${payload.entreprise}, ${payload.fonction}, ${payload.email}, ${payload.telephone}, ${payload.session})
+              `;
+            } else {
+              console.warn("DATABASE_URL not set — skipping lead insert");
+            }
+          } catch (dbErr) {
+            console.error("DB insert error", dbErr);
+          }
 
           const LOVABLE_API_KEY = process.env.LOVABLE_API_KEY;
           const RESEND_API_KEY = process.env.RESEND_API_KEY;
