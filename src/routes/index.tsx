@@ -859,7 +859,7 @@ function Inscription() {
     setSending(true);
     setError(null);
     try {
-      fetch("/api/public/inscription", {
+      const res = await fetch("/api/public/inscription", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -871,7 +871,10 @@ function Inscription() {
           telephone: form.telephone,
           session: form.session,
         }),
-      }).catch(() => {});
+      });
+      if (!res.ok) {
+        throw new Error(`inscription failed (${res.status})`);
+      }
 
       const lines = [
         "Bonjour,",
