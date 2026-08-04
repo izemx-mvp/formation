@@ -181,6 +181,14 @@ function Hero() {
             >
               Découvrir le programme
             </a>
+            <a
+              href="https://buy.stripe.com/00w4gAfi08j23G9fJTao800"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-gradient-izemx px-6 py-3 font-semibold text-white shadow-lg shadow-primary/40 transition-transform hover:scale-105"
+            >
+              Payer maintenant
+            </a>
           </div>
         </div>
 
@@ -915,6 +923,14 @@ function Inscription() {
             <p className="mt-3 text-muted-foreground">
               Notre équipe vous contactera rapidement afin de finaliser votre inscription.
             </p>
+            <a
+              href="https://buy.stripe.com/00w4gAfi08j23G9fJTao800"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-gradient-izemx px-6 py-3 font-semibold text-white shadow-lg shadow-primary/40 transition-transform hover:scale-105"
+            >
+              Payer maintenant
+            </a>
           </div>
         </div>
       </section>
