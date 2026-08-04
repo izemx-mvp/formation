@@ -181,6 +181,14 @@ function Hero() {
             >
               Découvrir le programme
             </a>
+            <a
+              href="https://buy.stripe.com/00w4gAfi08j23G9fJTao800"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-gradient-izemx px-6 py-3 font-semibold text-white shadow-lg shadow-primary/40 transition-transform hover:scale-105"
+            >
+              Payer maintenant
+            </a>
           </div>
         </div>
 
