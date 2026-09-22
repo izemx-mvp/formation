@@ -41,7 +41,7 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Formation IA IZEMX" },
       {
         property: "og:description",
-        content: "Formation immersive IA pour entrepreneurs — Session septembre 2026.",
+        content: "Formation immersive IA pour entrepreneurs — Session octobre 2026.",
       },
       { property: "og:type", content: "website" },
     ],
@@ -150,12 +150,12 @@ function Hero() {
 
           <div className="mt-8 glass rounded-2xl p-5">
             <div className="flex items-center gap-2 text-sm font-semibold text-white">
-              <Calendar className="h-4 w-4 text-primary" /> Session septembre 2026
+              <Calendar className="h-4 w-4 text-primary" /> Session octobre 2026
             </div>
             <div className="mt-3 grid gap-2 text-sm text-muted-foreground sm:grid-cols-3">
-              <div>Samedi 12 septembre</div>
-              <div>Samedi 19 septembre</div>
-              <div>Samedi 26 septembre</div>
+              <div>Samedi 17 octobre</div>
+              <div>Samedi 24 octobre</div>
+              <div>Samedi 31 octobre</div>
             </div>
             <div className="mt-3 flex flex-wrap gap-4 text-xs text-muted-foreground">
               <span>🕘 Groupe matin : 10h00 – 13h00</span>
@@ -947,7 +947,7 @@ function Inscription() {
           <div className="text-center">
             <h2 className="text-3xl font-bold text-white sm:text-4xl">
               Réservez votre place — {" "}
-              <span className="text-gradient">Session septembre</span>
+              <span className="text-gradient">Session octobre</span>
             </h2>
             <div className="mt-5 inline-flex items-center gap-2 rounded-full glass-strong border border-primary/40 px-5 py-2 text-sm font-semibold text-primary shadow-[0_0_24px_rgba(0,163,224,0.35)]">
               <Sparkles className="h-4 w-4" />
