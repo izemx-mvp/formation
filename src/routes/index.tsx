@@ -153,13 +153,12 @@ function Hero() {
               <Calendar className="h-4 w-4 text-primary" /> Session octobre 2026
             </div>
             <div className="mt-3 grid gap-2 text-sm text-muted-foreground sm:grid-cols-3">
-              <div>Samedi 17 octobre</div>
               <div>Samedi 24 octobre</div>
               <div>Samedi 31 octobre</div>
+              <div>Samedi 07 novembre</div>
             </div>
             <div className="mt-3 flex flex-wrap gap-4 text-xs text-muted-foreground">
-              <span>🕘 Groupe matin : 10h00 – 13h00</span>
-              <span>🕝 Groupe après-midi : 15h00 – 18h00</span>
+              <span>🕘 Groupe unique : 10h00 – 13h00</span>
             </div>
             <div className="mt-4 inline-flex items-center gap-2 rounded-full glass border border-primary/40 px-4 py-2 text-sm font-semibold text-white shadow-[0_0_24px_rgba(0,163,224,0.25)]">
               <span className="text-primary">Tarif :</span>
@@ -853,7 +852,7 @@ function Inscription() {
     fonction: "",
     email: "",
     telephone: "",
-    session: "Groupe matin (10h00 – 13h00)",
+    session: "Groupe unique (10h00 – 13h00)",
     rgpd: false,
   });
 
@@ -1009,8 +1008,7 @@ function Inscription() {
               value={form.session}
               onChange={(e) => update("session", e.target.value)}
             >
-              <option>Groupe matin (10h00 – 13h00)</option>
-              <option>Groupe après-midi (15h00 – 18h00)</option>
+              <option>Groupe unique (10h00 – 13h00)</option>
             </select>
 
             <label className="flex items-start gap-3 text-xs text-muted-foreground sm:col-span-2">
